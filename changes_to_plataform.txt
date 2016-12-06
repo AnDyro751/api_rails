@@ -1,0 +1,11 @@
+Se han agregado 4 gemas para las pruebas:
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+
+
+Se ha generado un modelo "User"
+$ rails g model User email name provider uid
+
+-
