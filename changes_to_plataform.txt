@@ -8,4 +8,5 @@ Se han agregado 4 gemas para las pruebas:
 Se ha generado un modelo "User"
 $ rails g model User email name provider uid
 
--
+Se ha generado un modelo "Token"
+$ rails g model Token token expires_at:datetime user:references

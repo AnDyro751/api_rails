@@ -3,4 +3,6 @@ class User < ApplicationRecord
   validates :email , uniqueness:true , presence:true , email:true
   validates :provider , presence:true
   validates :uid , presence:true
+
+  has_many :tokens
 end
