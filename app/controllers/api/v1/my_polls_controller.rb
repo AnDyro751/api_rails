@@ -14,7 +14,7 @@ class Api::V1::MyPollsController < ApplicationController
     if @poll.save
       render "api/v1/my_polls/show"
     else
-      render json:{ error: @poll.errors.full_messages , status: :unprocessable_entity }
+      render json:{ errors: @poll.errors.full_messages , status: :unprocessable_entity }
     end
   end
 
