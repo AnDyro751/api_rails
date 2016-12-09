@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
 
+  # before_action :authenticate
+
   def authenticate
     token_str = params[:token]
     token = Token.find_by(token: token_str)

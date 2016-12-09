@@ -14,4 +14,7 @@ $ rails g model Token token expires_at:datetime user:references
 Se ha generado un modelo "MyPoll" por el conflicto de alguna gema
 $ rails g model MyPoll description:text title expires_at user:references
 
-Se pueden crear usuarios mediante POST 
+Se pueden crear usuarios mediante POST
+
+Se muestran de manera correcta las encuestas mediante json !
+  Todo esta testeado !
