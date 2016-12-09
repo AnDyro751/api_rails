@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
 
 	def create
 		if !params[:auth]
-			render json: { error: "No encontramos el parámetro Auth" }
+			render json: { errors: "No encontramos el parámetro Auth" }
 		else
 		  @user = User.from_omniauth(params[:auth])
 			@token = @user.tokens.create(user: @user)

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :my_poll do
-    association :user , factory: :user
+    association :user , factory: :sequence_user
     description "MyText jnajs as"
     expires_at "2016-12-07 21:25:05"
     title "MyString ajnsa"

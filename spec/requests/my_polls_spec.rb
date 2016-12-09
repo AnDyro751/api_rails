@@ -2,12 +2,11 @@ require "rails_helper"
 
 RSpec.describe Api::V1::MyPollsController, type: :request do
   describe "GET /polls" do
-
 		before :each do
 			FactoryGirl.create_list(:my_poll, 9)
 			get "/api/v1/polls/"
 		end
-
+    it { expect(response).to have_http_status(200) }
 		it "mande la lista de encuestas" do
 			json = JSON.parse(response.body)
 			expect(json.length).to eq(MyPoll.count )
@@ -92,7 +91,33 @@ RSpec.describe Api::V1::MyPollsController, type: :request do
       @token = FactoryGirl.create(:token , expires_at: DateTime.now + 4.minutes)
       @poll = FactoryGirl.create(:my_poll,user:FactoryGirl.create(:dummy_user))
       patch api_v1_poll_path(@poll) , { params:{ token: @token.token,my_poll:{ title:"New title to my first poll" } }}
+    end
+    it { expect(response).to have_http_status(401) }
+  end
 
+  describe "DELETE /polls/:id" do
+    context "con token valido" do
+      before :each do
+        @token = FactoryGirl.create(:token , expires_at: DateTime.now + 4.minutes)
+        @poll = FactoryGirl.create(:my_poll,user:@token.user)
+      end
+      it {
+        delete api_v1_poll_path(@poll) , { params:{ token: @token.token}}
+        expect(response).to have_http_status(200)
+      }
+      it "elimina la encuesta correctamente" do
+        expect{
+          delete api_v1_poll_path(@poll) , { params:{ token: @token.token}}
+        }.to change(MyPoll,:count).by(-1)
+      end
+    end
+  end
+
+  context "con un token invalido" do
+    before :each do
+      @token = FactoryGirl.create(:token , expires_at: DateTime.now + 4.minutes)
+      @poll = FactoryGirl.create(:my_poll,user:FactoryGirl.create(:dummy_user))
+      delete api_v1_poll_path(@poll) , { params:{ token: @token.token}}
     end
     it { expect(response).to have_http_status(401) }
   end
