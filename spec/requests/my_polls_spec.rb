@@ -32,4 +32,32 @@ RSpec.describe Api::V1::MyPollsController, type: :request do
     end
   end
 
+  describe "POST /polls" do
+    context "Con un token valido" do
+      before :each do
+        @token = FactoryGirl.create(:token , expires_at: DateTime.now + 3.day)
+        post "/api/v1/polls/" , { params: { token: @token.token , my_poll:{title:"Hola mundo" , description:"akmska skajs kajskja" , expires_at: DateTime.now} } }
+      end
+      it { have_http_status(200) }
+
+      it "crea una nueva encuesta" do
+        expect{
+          post "/api/v1/polls/" , { params: { token: @token.token , my_poll:{title:"Hola mundo" , description:"akmska skajs kajskja" , expires_at: DateTime.now} } }
+        }.to change(MyPoll,:count).by(1)
+      end
+
+      it "responde con la encuesta creada" do
+        json = JSON.parse(response.body)
+        expect(json["title"]).to eq("Hola mundo")
+      end
+    end
+
+    context "Con un token inválido" do
+      before :each do
+        post "/api/v1/polls/"
+      end
+
+    end
+  end
+
 end
