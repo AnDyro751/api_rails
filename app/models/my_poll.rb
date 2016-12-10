@@ -4,7 +4,7 @@ class MyPoll < ApplicationRecord
   validates :expires_at , presence:true
   validates :user , presence:true
   belongs_to :user
-
+  has_many :questions
   def is_valid?
     DateTime.now < self.expires_at
   end
