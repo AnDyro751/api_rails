@@ -1,7 +1,6 @@
 class Api::V1::QuestionsController < ApplicationController
   before_action :authenticate, except: [:index,:show]
-  # before_action :set_question, except: [:index,:create]
-  before_action :set_question, only: [:show,:update,:destroy]
+  before_action :set_question, except: [:index,:create]
   before_action :set_poll
   before_action(only:[:update,:destroy,:create]) { |controlador| controlador.authenticate_owner(@poll.user) }
   def index

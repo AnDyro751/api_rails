@@ -24,6 +24,19 @@ RSpec.describe Api::V1::QuestionsController, type: :request do
     end
   end
 
+  describe "GET /polls/:poll_id/questions/:id" do
+    before :each do
+      @question = @poll.questions[0]
+      get api_v1_poll_question_path(@poll,@question)
+    end
+    it { expect(response).to have_http_status(200) }
+
+    it "mande el json de la pregunta" do
+      json = JSON.parse(response.body)
+      expect(json["id"]).to eq(@question.id)
+    end
+  end
+
   describe "POST /poll/:poll_id/questions" do
     before :each do
       post api_v1_poll_questions_path(@poll) , { params: { question: { description: "Cual es tu lenguej favoito?" },token: @token.token } }
