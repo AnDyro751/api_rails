@@ -64,4 +64,54 @@ RSpec.describe Api::V1::QuestionsController, type: :request do
     end
   end
 
+  describe "PUT / PATCH /polls/:question_id/:id" do
+    context "con usuario valido" do
+      before :each do
+        @question = @poll.questions[0]
+        patch api_v1_poll_question_path(@poll,@question) , { params: { question: { description: "Hola mundo" },token: @token.token} }
+      end
+      it { expect(response).to have_http_status(200) }
+
+      it "actualiza correctamente la encuesta" do
+        json = JSON.parse(response.body)
+        expect(json["description"]).to eq("Hola mundo")
+      end
+    end
+    context "con usuario invalido" do
+      before :each do
+        @question = @poll.questions[0]
+        new_user = FactoryGirl.create(:dummy_user)
+        @new_token = FactoryGirl.create(:token , user: new_user , expires_at: DateTime.now + 1.month)
+        patch api_v1_poll_question_path(@poll,@question) , { params: { question: { description: "Hola mundo" },token: @new_token.token} }
+      end
+      it { expect(response).to have_http_status(401) }
+
+      it "actualiza correctamente la encuesta" do
+        json = JSON.parse(response.body)
+        expect(json["description"]).to eq(nil)
+      end
+    end
+  end
+
+  describe "DELETE /polls/:question_id/:id" do
+    context "when " do
+      before :each do
+        @question = @poll.questions[0]
+      end
+      it "manda status 200 al eliminar la encuesta" do
+        delete api_v1_poll_question_path(@poll,@question) , { params: { token: @token.token} }
+        expect(response).to have_http_status(200)
+      end
+      it "elimina la encuesta" do
+        delete api_v1_poll_question_path(@poll,@question) , { params: { token: @token.token} }
+        expect(Question.where(id:@question.id)).to be_empty
+      end
+      it "disminuye el contador -1" do
+        expect{
+          delete api_v1_poll_question_path(@poll,@question) , { params: { token: @token.token} }
+        }.to change(Question,:count).by(-1)
+      end
+    end
+  end
+
 end
