@@ -2,6 +2,9 @@ class Api::V1::MyPollsController < ApplicationController
   before_action :authenticate, except: [:index,:show]
   before_action :set_poll, only: [:show,:update,:destroy]
   before_action(only:[:update,:destroy]) { |controlador| controlador.authenticate_owner(@poll.user) }
+
+  layout "api/v1/application"
+
   def index
     @polls = MyPoll.all.reverse
   end

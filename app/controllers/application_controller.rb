@@ -1,6 +1,5 @@
-class ApplicationController < ActionController::API
-
-  # before_action :authenticate
+class ApplicationController < ActionController::Base
+  before_action :set_jbuilder_default
   protected
     def authenticate_owner(owner)
       if owner != @current_user
@@ -9,6 +8,7 @@ class ApplicationController < ActionController::API
       end
       true
     end
+
     def authenticate
       token_str = params[:token]
       token = Token.find_by(token: token_str)
@@ -17,6 +17,10 @@ class ApplicationController < ActionController::API
       else
         @current_user = token.user
       end
+    end
+
+    def set_jbuilder_default
+      @errors = []
     end
 
 end

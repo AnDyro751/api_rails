@@ -1,0 +1,83 @@
+[33mcommit 8667b08826f2a0a6fd6c488eddc5298452838a72[m
+Author: = <=>
+Date:   Sun Dec 11 18:30:02 2016 -0600
+
+    Se pueden crear respuestas a las preguntas D:
+
+[33mcommit f6229d31f15e19cc07350b12c9dc9ddd731cba25[m
+Author: = <=>
+Date:   Sat Dec 10 20:05:20 2016 -0600
+
+    Accion show para las preguntas ! , validaciones :ok :v !
+
+[33mcommit cde4d22d0ec216c886b71d26cbe29e647440f755[m
+Author: = <=>
+Date:   Sat Dec 10 19:29:03 2016 -0600
+
+    Borrar y actualizar encuestas , validaciones satisfactioras D: ! :v !
+
+[33mcommit dc920fe1ee9dec82e176a0b15ad4391fe3d78e67[m
+Author: = <=>
+Date:   Fri Dec 9 22:54:20 2016 -0600
+
+    Agregar preguntas a las encuestas , validaciones satisfactorias D: !
+
+[33mcommit e5a65343bf5c487c44fec16d2b2d09152b7ab0a5[m
+Author: = <=>
+Date:   Fri Dec 9 14:29:35 2016 -0600
+
+    Eliminar encuestas y validaciones satisfactoriamente :D !
+
+[33mcommit 312948e30ea786c0ccf30205b75df3938afbaf80[m
+Author: = <=>
+Date:   Thu Dec 8 23:38:16 2016 -0600
+
+    Actualizar encuestas ! D:
+
+[33mcommit b5726c916f128d1e06ead722830cb16ce64f52ad[m
+Author: = <=>
+Date:   Thu Dec 8 22:07:59 2016 -0600
+
+    HTTP status
+
+[33mcommit b7bd5039713faaa64c65131d8d58b0df28853fe7[m
+Author: = <=>
+Date:   Thu Dec 8 21:37:22 2016 -0600
+
+    Funciones para crear encuestas !
+
+[33mcommit 8ac11876c7ce49969c57b3648a7e9a0c00225466[m
+Author: = <=>
+Date:   Thu Dec 8 19:31:17 2016 -0600
+
+    Se han generado las vistas de las encuestas
+
+[33mcommit 7c7aff8dd7f94a97f1d4f25189ca3774d0c0e9c8[m
+Author: = <=>
+Date:   Thu Dec 8 16:35:22 2016 -0600
+
+    Testing con rspec para MyPoll
+
+[33mcommit 40f018bd79cb30b8faa61938a42b6118dbe47e16[m
+Author: = <=>
+Date:   Thu Dec 8 16:34:35 2016 -0600
+
+    Se ha agregado el modelo MyPoll para las encuestas !
+
+[33mcommit df47a9aa35006a49b11ed3b020c742d95c13f5a2[m
+Author: = <=>
+Date:   Tue Dec 6 21:21:13 2016 -0600
+
+    Se agregaron los modelos de usuario y token
+
+[33mcommit 7542e8d4f09bcb7eb979f14c4815ca1c3f8ef956[m
+Author: = <=>
+Date:   Tue Dec 6 17:10:31 2016 -0600
+
+    Agregamos los modelos de token y user
+
+[33mcommit 9391ac215aff3132bac80e78c3484ddadefff345[m
+Author: = <=>
+Date:   Tue Dec 6 16:26:02 2016 -0600
+
+    First Commit
