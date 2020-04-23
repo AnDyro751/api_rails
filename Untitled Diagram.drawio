@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-04-23T20:06:13.508Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36" etag="cHnE5HIUHCH_uC_rmvXt" version="13.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-04-23T20:11:21.169Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36" etag="otdy7kCE2wlY_SJpoEiJ" version="13.0.1" type="github">
   <diagram id="tFZdv3qwhZIxvrwCsY4H" name="Page-1">
-    <mxGraphModel dx="7914" dy="3736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="764" dy="361" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -156,6 +156,18 @@
         </mxCell>
         <mxCell id="Gqe8wa2ra6e1oZhSv2lw-8" value="COPY DEVELOPMENT CODE IN COMPONENTS FOLDER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="510" y="700" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Gqe8wa2ra6e1oZhSv2lw-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.542;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Gqe8wa2ra6e1oZhSv2lw-9" target="Gqe8wa2ra6e1oZhSv2lw-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gqe8wa2ra6e1oZhSv2lw-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gqe8wa2ra6e1oZhSv2lw-9" target="Gqe8wa2ra6e1oZhSv2lw-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gqe8wa2ra6e1oZhSv2lw-9" value="&lt;font style=&quot;font-size: 9px&quot;&gt;Se agrega todo el código del componente, el .jsx, el .css y si el paquete necesita de instalarse en package.json se agrega la línea correspondiente, se instala, se hace deploy y se vuelve a editar, todo en la rama de develop, hasta que de click en &quot;deploy&quot;, se hace un commit a master y ya.&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="840" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Gqe8wa2ra6e1oZhSv2lw-11" value="&lt;font style=&quot;font-size: 9px&quot;&gt;El código JSX se podrá editar, junto con los demás componentes que puedan incluir, al guardar se reemplaza el código anterior y se hace push al branch&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1030" width="170" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
